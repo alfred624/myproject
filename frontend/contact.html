@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Contact form for portfolio">
+  <meta name="keywords" content="contact, email, web form">
+  <meta name="author" content="Your Name">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="general-style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: hsl(0, 0%, 96%);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 80px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: hsl(0, 97%, 48%);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 15px;
+      font-weight: bold;
+      color: hsl(0, 100%, 50%);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 120px;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: hsl(210, 3%, 76%);
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #005f99;
+    }
+
+    body.dark-mode main {
+      background-color: hsl(0, 12%, 89%);
+    }
+
+    body.dark-mode input[type="text"],
+    body.dark-mode input[type="email"],
+    body.dark-mode textarea {
+      background-color: hwb(0 76% 23%);
+      color: #f1f1f1;
+      border-color: #444;
+    }
+
+    body.dark-mode input[type="submit"] {
+      background-color: hwb(200 4% 12%);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      main {
+        margin: 40px 10px;
+        padding: 20px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to my photolio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="survey.html">Survey</a>
+      <button id="themeToggle">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact Me</h1>
+    <form onsubmit="return validateContactForm()">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" required></textarea>
+
+      <input type="submit" value="Send">
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Alfred Rwambo. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function validateContactForm() {
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const phoneRegex = /^\d{10}$/;
+
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+      if (!phoneRegex.test(phone)) {
+        alert("Phone number should be 10 digits.");
+        return false;
+      }
+
+      return true;
+    }
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById("themeToggle");
+
+  // Check for saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggle.textContent = "☀️";
+  }
+
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+      themeToggle.textContent = "☀️";
+    } else {
+      localStorage.setItem("theme", "light");
+      themeToggle.textContent = "🌙";
+    }
+  });
+});
+
+  </script>
+</body>
+</html>

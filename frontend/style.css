@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  text-align: center;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#greeting{
+  background-color:white;
+  padding: 5px;
+  text-align: center;
+  color:blue;
+  font-size: large;
+  width: 400px;
+  height: 25px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.9);
+}
+section{
+  padding: 1em;
+  color: black;
+}
+#greetsection{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dark Theme */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #1e1e1e;
+}
+body.dark-mode #greetsection h3{
+  background-color: black;
+  color: white;
+}

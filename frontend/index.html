@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta name="description" content="Personal Portfolio Website" >
+  <meta name="keywords" content="portfolio, web developer, HTML, CSS, JavaScript" >
+  <meta name="author" content="Maximilian Exavery" >
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="general-style.css" >
+  <link rel="stylesheet" href="style.css" >
+  <style>
+    header {
+    background-color: #007acc;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px 25px;
+      margin: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      background-color: #004b80;
+    }
+    #themeToggle:hover {
+      background: black;
+      color: white;
+    }
+    @media screen and (min-width:321px){
+      iframe{
+        width:"652";
+        height:100%;
+      }
+    }
+
+  </style>
+</head>
+<body onload="greetUser()">
+  <header>
+    <h1>Welcome to My Portfolio</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="survey.html">Survey</a>
+        <button id="themeToggle">🌙</button>
+    </nav>
+  </header>
+  <section id="greetsection">
+    <h3 id="greeting" style="margin: 5px;"></h3>
+  </section>
+
+ 
+
+    <section>
+      <h2>Featured Project</h2>
+      <img src="website.png" alt="Screenshot of project" />
+      <p>This is a project I created using HTML, CSS, and JavaScript.</p>
+    </section>
+
+    <section>
+      <h2>Watch My Introduction</h2>
+      <iframe 
+      src="https://youtu.be/-ddfZ0atNAU"  allowfullscreen>
+      </iframe>
+    </section>
+
+
+  <footer>
+    <p>&copy; 2025 Alfred Rwambo. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

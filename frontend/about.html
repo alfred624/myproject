@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Maximilian Exavery</title>
+  <meta name="description" content="Learn more about Yusuph Buckoti, a Computer Science student with web development skills." />
+  <meta name="keywords" content="computer science, web development, portfolio, skills, education, HTML, CSS, JS" />
+  <meta name="author" content="Alfred Rwambo" />
+  <link rel="stylesheet" href="general-style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: hsl(0, 14%, 40%);
+    } 
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .about-left,
+    .about-right {
+      flex: 1;
+      min-width: 300px;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1{
+      color: white;
+    }
+     h2 {
+      color: hsl(0, 100%, 50%);
+    }
+
+    figure {
+      margin: 0 0 15px;
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 10px;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 5px;
+    }
+
+    .highlight {
+      color: hsl(147, 98%, 36%);
+      font-weight: bold;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .skills-list ul,
+    .interests-list {
+      list-style-type: disc;
+    }
+
+    .skills-list > li {
+      margin-top: 10px;
+    }
+
+    a {
+      color: hwb(140 2% 39%);
+      text-decoration: none;
+    }
+    body.dark-mode .about-left,
+    body.dark-mode .about-right {
+      background-color: #1e1e1e;
+    }
+
+
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Portfolio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="survey.html">Survey</a>
+      <button id="themeToggle">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-container">
+      <!-- Left Column -->
+      <div class="about-left">
+        <h1 style="color: black;">About Me</h1>
+        <figure>
+          <img src="alfred.jpg" alt="Alfred Rwambo Profile Picture" style="border-radius: 50%;">
+          <img src="Github.jpg" alt="Github Profile Picture" style="border-radius: 60%;">
+          <figcaption>Alfred Rwambo – Bachelor of Science in Computer Science</figcaption>
+        </figure>
+        <p>Hello! I'm <span class="highlight">Alfred Rwambo</span>, a passionate student of Computer Science at The University of Dodoma. I'm driven by curiosity, creativity, and the desire to build smart solutions for real-world problems.</p>
+        <p>I recently completed training in <span class="highlight">HTML5, CSS, JavaScript</span>, and <span class="highlight">python-django</span>. I'm enthusiastic about front-end and back-end web development, responsive UI/UX, and data-driven applications.</p>
+        <p>Currently, I'm deepening my skills in <span class="highlight">Cyber Security and digital forensics,Data science and Block Chain</span>, and building real-world projects to sharpen my craft.</p>
+
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li><strong>Web Development:</strong>
+            <ul>
+              <li>HTML5, CSS, JavaScript </li>
+              <li>Python-django</li>
+              <li>Responsive Design</li>
+            </ul>
+          </li>
+          <li><strong>Programming Languages:</strong>
+            <ul>
+              <li>PHP,JAVA,PYTHON AND KOTLIN</li>
+            </ul>
+          </li>
+          <li><strong>Databases:</strong>
+            <ul><li>SQL</li></ul>
+          </li>
+          <li><strong>Editor,Tools and Technlogies</strong>
+            <ul>
+              <li>Git, VS Code,IntelliJ IDEA</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right Column -->
+      <div class="about-right">
+        <h2>My Ambitions:</h2>
+        <ul class="interests-list">
+          <li>Web Development</li>
+          <li>Cyber Security and Digital Forensics</li>
+          <li>Block Chain</li>
+          <li>Data science</li>
+        </ul>
+
+        <h2>Education</h2>
+        <p><strong>Bachelor of Science in Computer Science</strong><br>
+        University of Dodoma, Tanzania<br></p>
+
+        <p><strong>Web Development both theory and practical training</strong><br>
+        @University of Dodoma, Tanzania<br>
+        July 2024 – September 2024</p>
+
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:alfredrwambo@gmail.com">alfredrwambo@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/govel" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a></p>
+        <p>GitHub: <a href="https://buckoti-lab.github.io/project-showcase/" target="_blank" rel="noopener noreferrer">github.com/alfred</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Alfred Rwambo. All rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById("themeToggle");
+
+  // Check for saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggle.textContent = "☀️";
+  }
+
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+      themeToggle.textContent = "☀️";
+    } else {
+      localStorage.setItem("theme", "light");
+      themeToggle.textContent = "🌙";
+    }
+  });
+});
+
+  </script>
+</body>
+</html>

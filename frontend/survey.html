@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey</title>
+  <link rel="stylesheet" href="general-style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f9fc;
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 80px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color:black;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin: 15px 0 5px;
+      color: blue;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 8px;
+      margin-left: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      font-size: 15px;
+    }
+
+    input[type="submit"] {
+      margin-top: 25px;
+      padding: 12px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #005f99;
+    }
+    body.dark-mode main {
+      background-color: #1e1e1e;
+    }
+
+    body.dark-mode textarea {
+      background-color: #2a2a2a;
+      color: #f1f1f1;
+    }
+
+    body.dark-mode nav a {
+      color: #f1f1f1;
+    }
+
+    @media screen and (max-width: 600px) {
+      main {
+        margin: 40px 15px;
+        padding: 20px;
+      }
+
+      form {
+        font-size: 14px;
+      }
+
+      textarea {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Portfolio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="survey.html">Survey</a>
+      <button id="themeToggle">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Survey</h1>
+      <form>
+        <label>How did you find my portfolio?</label><br>
+        <input type="radio" name="source" value="LinkedIn" required> LinkedIn
+        <input type="radio" name="source" value="GitHub"> GitHub
+        <input type="radio" name="source" value="Referral"> Referral<br><br>
+
+        <label>What features do you like?</label><br>
+        <input type="checkbox" name="features" value="Coding"> Coding
+        <input type="checkbox" name="features" value="Interactivity"> Interactivity
+        <input type="checkbox" name="features" value="Projects"> Projects<br><br>
+
+        <label for="feedback">Additional Feedback:</label><br>
+        <textarea id="feedback" required></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Alfred Marco. All rights reserved.</p>
+  </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById("themeToggle");
+
+  // Check for saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggle.textContent = "☀️";
+  }
+
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+      themeToggle.textContent = "☀️";
+    } else {
+      localStorage.setItem("theme", "light");
+      themeToggle.textContent = "🌙";
+    }
+  });
+});
+
+  </script>
+</body>
+</html>
